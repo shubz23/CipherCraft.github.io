@@ -1,48 +1,23 @@
-# Project Name: CipherCraft
+# CipherCraft: Your Ultimate Password Generator
 
-# Description
-- CipherCraft is a simple web application that generates secure passwords based on user preferences. 
-- Users can specify the length of the password and choose whether it should contain uppercase letters, lowercase letters, numbers, and symbols. 
-- The application then generates a random password that meets these criteria and displays it for the user. 
-- Additionally, users can copy the generated password to their clipboard with the click of a button.
+Welcome to **CipherCraft** – a sleek and powerful password generator designed to create secure and customizable passwords with ease. Whether you’re a security enthusiast or just looking for a quick way to generate strong passwords, CipherCraft has you covered!
 
-```javascript
-const pwE1 = document.getElementById("pw");
-const copyE1 = document.getElementById("copy");
-const lenE1 = document.getElementById("len");
-const upperE1 = document.getElementById("upper");
-const lowerE1 = document.getElementById("lower");
-const numberE1 = document.getElementById("number");
-const symbolE1 = document.getElementById("symbol");
-const generateE1 = document.getElementById("generate");
+## 🚀 Features
 
-const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-const numbers = "0123456789";
-const symbols = "!@#$%^&*()_+=";
+- **Customizable Password Length**: Specify exactly how long you want your password to be, from 2 to 30 characters.
+- **Flexible Criteria**: Choose whether your password includes uppercase letters, lowercase letters, numbers, and special symbols.
+- **Easy Copy Functionality**: One-click copy feature to effortlessly add your new password to your clipboard.
 
-function getLowercase() {
-  return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
-}
+## 🔧 Getting Started
 
-// For rest of the cases we similarly create functions
+Follow these simple steps to get up and running with CipherCraft:
 
-copyE1.addEventListener("click", () => {
-  const textarea = document.createElement("textarea");
-  const password = pwE1.innerText;
+1. **Clone the Repository**
 
-  if (!password) {
-    return;
-  }
+   ```bash
+   git clone https://github.com/shubz23/CipherCraft.git
+   cd ciphercraft
 
-  textarea.value = password;
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand("copy");
-  textarea.remove();
-  alert("Password copied to clipboard");
-});
-``` 
 
 
 # Installation
