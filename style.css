@@ -2,42 +2,66 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("assets/website_back.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 header {
   color: white;
-  align-items: center;
-  position: absolute;
-  justify-content: center;
-  margin-bottom: 650px;
-  font-size: 2rem;
-  width: 70%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional for better contrast */
 }
 
 h3 {
-  text-align: center;
+  font-size: 2rem;
 }
 
 hr {
   width: 70%;
+  margin: 0 auto;
+  border-color: white;
 }
-body {
-  background-color: black;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  min-height: 100vh;
+
+.pw-container {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Dark semi-transparent background for better readability */
+  border-radius: 8px;
+  padding: 2rem;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .pw-header {
-  padding: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pw {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: flex;
   font-size: 1.5rem;
   align-items: center;
@@ -49,9 +73,9 @@ body {
 }
 
 .pw button {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: none;
-  color: rgb(29, 2, 56);
+  color: rgb(134, 94, 175);
   cursor: pointer;
   font-family: inherit;
   font-weight: bold;
@@ -70,7 +94,7 @@ body {
 }
 
 .pw-body {
-  padding: 0 1rem 1rem;
+  padding: 1rem 0;
 }
 
 .form-control {
@@ -81,14 +105,25 @@ body {
 }
 
 .generate {
-  background-color: white;
+  background-color: rgb(76, 63, 168);
   border: none;
-  color: black;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   display: block;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.75rem;
   margin-top: 1rem;
   width: 100%;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.generate:hover {
+  background-color: rgb(103, 34, 120); /* Change color on hover */
+}
+
+.generate:active {
+  background-color: rgb(94, 55, 200); /* Change color when button is clicked */
 }
