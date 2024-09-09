@@ -29,32 +29,42 @@ function getSymbol() {
 }
 
 function generatePassword() {
-  const len = lenE1.value;
+  const len = parseInt(lenE1.value);
+
+  if (
+    !upperE1.checked &&
+    !lowerE1.checked &&
+    !numberE1.checked &&
+    !symbolE1.checked
+  ) {
+    alert("Please select at least one option to generate a password.");
+    return;
+  }
 
   let password = "";
 
-  if(upperE1.checked) {
+  if (upperE1.checked) {
     password += getUppercase();
   }
 
-  if(lowerE1.checked) {
+  if (lowerE1.checked) {
     password += getLowercase();
   }
 
-  if(numberE1.checked) {
+  if (numberE1.checked) {
     password += getNumber();
   }
 
-  if(symbolE1.checked) {
+  if (symbolE1.checked) {
     password += getSymbol();
   }
 
-  for(let i = password.length; i < len; i++) {
+  for (let i = password.length; i < len; i++) {
     const x = generateX();
     password += x;
   }
 
-  pwE1.innerText = password;
+  pwE1.textContent = password;
 }
 
 function generateX() {
@@ -65,10 +75,9 @@ function generateX() {
 
   if (lowerE1.checked) {
     xs.push(getLowercase());
-
   }
 
-  if(numberE1.checked) {
+  if (numberE1.checked) {
     xs.push(getNumber());
   }
 
@@ -76,7 +85,7 @@ function generateX() {
     xs.push(getSymbol());
   }
 
-  if (xs.length === 0) return"";
+  if (xs.length === 0) return "";
 
   return xs[Math.floor(Math.random() * xs.length)];
 }
@@ -85,7 +94,7 @@ generateE1.addEventListener("click", generatePassword);
 
 copyE1.addEventListener("click", () => {
   const textarea = document.createElement("textarea");
-  const password = pwE1.innerText;
+  const password = pwE1.textContent;
 
   if (!password) {
     return;
@@ -97,5 +106,4 @@ copyE1.addEventListener("click", () => {
   document.execCommand("copy");
   textarea.remove();
   alert("Password copied to clipboard");
-
 });
